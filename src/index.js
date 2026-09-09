@@ -1,3 +1,4 @@
+
 export default {
     async fetch(request, env) {
         const url = new URL(request.url);
@@ -15,21 +16,27 @@ export default {
                     );
                 }
 
+                // Very simple test prompt for now
                 const prompt =
                     `Here is my SIgNature: ${signature}\n\n` +
                     `What do you think?`;
 
                 const response = await fetch(
-                    "https://api.openai.com/v1/responses",
+                    "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
                     {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",
-                            "Authorization": `Bearer ${env.OPENAI_API_KEY}`
+                            "Authorization": `Bearer ${env.GEMINI_API_KEY}`
                         },
                         body: JSON.stringify({
-                            model: "gpt-5.6-luna",
-                            input: prompt
+                            model: "gemini-2.5-flash-lite",
+                            messages: [
+                                {
+                                    role: "user",
+                                    content: prompt
+                                }
+                            ]
                         })
                     }
                 );
@@ -37,18 +44,19 @@ export default {
                 const data = await response.json();
 
                 if (!response.ok) {
-                    console.error("OpenAI error:", data);
+                    console.error("Gemini error:", data);
 
                     return Response.json(
                         {
-                             error: `OpenAI error: ${JSON.stringify(data)}`
+                            error: `Gemini error: ${JSON.stringify(data)}`
                         },
                         { status: 500 }
                     );
                 }
 
                 return Response.json({
-                    result: data.output_text
+                    result: data.choices?.[0]?.message?.content
+                        || "Gemini returned no text."
                 });
 
             } catch (error) {
@@ -65,3 +73,4 @@ export default {
         return env.ASSETS.fetch(request);
     }
 };
+
