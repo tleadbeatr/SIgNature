@@ -7,7 +7,7 @@
  * Do not put engine logic in this file.
  */
 
-const MEASUREMENT_THEATRE = {
+window.MEASUREMENT_THEATRE = {
 
     opening: [
         "MeASURe-ment submitted.",
