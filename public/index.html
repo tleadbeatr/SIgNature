@@ -153,17 +153,14 @@
                  * Only reveal the AI interpretation after
                  * the measurement theatre has finished.
                  */
-                result.textContent = data.result;
+                result.textContent += "\n\nAI interpretation:\n\n" + data.result;
 
             } catch (error) {
 
                 theatre.complete();
 
                 await theatre.promise;
-
-                result.textContent =
-                    "The MeASURe-ment failed.\n\n" +
-                    error.message;
+                result.textContent += "\n\nThe MeASURe-ment failed.\n\n" + error.message;
             }
         });
     </script>
