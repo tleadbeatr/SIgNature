@@ -202,7 +202,7 @@
 
             const queue =
                 createMessageQueue(
-                    MEASUREMENT_THEATRE.deranged
+                    window.MEASUREMENT_THEATRE.deranged
                 );
 
 
@@ -236,7 +236,7 @@
              * The closing sequence is deliberately not randomised.
              * It is the ritual ending.
              */
-            for (const message of MEASUREMENT_THEATRE.closing) {
+            for (const message of window.MEASUREMENT_THEATRE.closing) {
 
                 show(message);
 
@@ -251,7 +251,7 @@
 
         async function runTimeout() {
 
-            for (const message of MEASUREMENT_THEATRE.timeout) {
+            for (const message of window.MEASUREMENT_THEATRE.timeout) {
 
                 show(message);
 
@@ -273,7 +273,7 @@
             /*
              * Opening is fixed and identical every time.
              */
-            for (const message of MEASUREMENT_THEATRE.opening) {
+            for (const message of window.MEASUREMENT_THEATRE.opening) {
 
                 show(message);
 
@@ -310,7 +310,7 @@
              * Stage 1: respectable metrology
              */
             await runStage(
-                MEASUREMENT_THEATRE.respectable,
+                window.MEASUREMENT_THEATRE.respectable,
                 config.respectableMessages
             );
 
@@ -321,7 +321,7 @@
             if (!timedOut) {
 
                 await runStage(
-                    MEASUREMENT_THEATRE.questionable,
+                    window.MEASUREMENT_THEATRE.questionable,
                     config.questionableMessages
                 );
             }
@@ -333,7 +333,7 @@
             if (!timedOut) {
 
                 await runStage(
-                    MEASUREMENT_THEATRE.bureaucratic,
+                    window.MEASUREMENT_THEATRE.bureaucratic,
                     config.bureaucraticMessages
                 );
             }
