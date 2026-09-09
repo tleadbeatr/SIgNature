@@ -8,73 +8,50 @@
 
     <style>
         body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont,
-                         "Segoe UI", sans-serif;
+            font-family: Arial, sans-serif;
             max-width: 700px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem;
-            line-height: 1.6;
-            color: #222;
-            background: #fafafa;
+            margin: 60px auto;
+            padding: 20px;
+            line-height: 1.5;
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.2em;
         }
 
         .subtitle {
-            font-size: 1.2rem;
             color: #666;
             margin-top: 0;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2em;
         }
 
-        label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        input[type="text"] {
-            box-sizing: border-box;
+        input {
             width: 100%;
-            padding: 0.8rem;
-            font-size: 1.1rem;
-            border: 1px solid #aaa;
-            border-radius: 6px;
-            background: white;
+            box-sizing: border-box;
+            padding: 12px;
+            font-size: 1.1em;
+            margin-bottom: 10px;
         }
 
         button {
-            margin-top: 1rem;
-            padding: 0.8rem 1.4rem;
-            font-size: 1.05rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 6px;
+            padding: 12px 24px;
+            font-size: 1em;
             cursor: pointer;
-            background: #222;
-            color: white;
         }
 
-        button:hover {
-            background: #444;
-        }
-
-        .example {
-            margin-top: 0.6rem;
-            font-size: 0.9rem;
+        .examples {
             color: #777;
+            font-size: 0.9em;
+            margin-bottom: 15px;
         }
 
         #result {
-            margin-top: 2.5rem;
-            padding: 1.5rem;
-            background: white;
-            border-radius: 8px;
-            border: 1px solid #ddd;
+            margin-top: 30px;
+            padding: 20px;
             white-space: pre-wrap;
+            border-left: 4px solid #444;
+            background: #f5f5f5;
+            min-height: 1.5em;
         }
 
         .hidden {
@@ -93,22 +70,19 @@
 
     <form id="signature-form">
 
-        <label for="signature">
-            What is your SIgNature?
-        </label>
-
         <input
-            type="text"
             id="signature"
             name="signature"
-            placeholder="e.g. K s^-1"
+            type="text"
+            placeholder="Enter your SIgNature"
             autocomplete="off"
             required
         >
 
-        <div class="example">
-            Try something like <code>K s^-1</code>,
-            <code>K/s</code>, or <code>(K Ω)/H</code>.
+        <div class="examples">
+            Try: K s<sup>-1</sup> &nbsp; | &nbsp;
+            K/s &nbsp; | &nbsp;
+            (K Ω)/H
         </div>
 
         <button type="submit">
@@ -119,22 +93,33 @@
 
     <div id="result" class="hidden"></div>
 
+    <!-- Measurement comedy engine -->
+    <script src="measurement-theatre.js"></script>
+
     <script>
         const form = document.getElementById("signature-form");
+        const signatureInput = document.getElementById("signature");
         const result = document.getElementById("result");
 
         form.addEventListener("submit", async (event) => {
             event.preventDefault();
 
-            const signature =
-                document.getElementById("signature").value.trim();
+            const signature = signatureInput.value.trim();
 
             if (!signature) {
                 return;
             }
 
             result.classList.remove("hidden");
-            result.textContent = "MeASURe-ment in progress...";
+
+            /*
+             * Start the measurement theatre immediately.
+             * It runs independently while the AI request is being processed.
+             */
+            const theatre = runMeasurementTheatre({
+                signature: signature,
+                element: result
+            });
 
             try {
                 const response = await fetch("/analyse", {
@@ -150,18 +135,37 @@
                 const data = await response.json();
 
                 if (!response.ok) {
-                    throw new Error(data.error || "Something went wrong.");
+                    throw new Error(
+                        data.error || "Something went wrong."
+                    );
                 }
 
+                /*
+                 * Tell the theatre that the result is ready.
+                 * The theatre decides when the dramatic reveal happens.
+                 */
+                theatre.complete();
+
+                await theatre.promise;
+
+                /*
+                 * Only reveal the AI interpretation after
+                 * the measurement theatre has finished.
+                 */
                 result.textContent = data.result;
 
             } catch (error) {
+
+                theatre.complete();
+
+                await theatre.promise;
+
                 result.textContent =
-                    "The MeASURe-ment failed.\n\n" + error.message;
+                    "The MeASURe-ment failed.\n\n" +
+                    error.message;
             }
         });
     </script>
 
 </body>
 </html>
-
