@@ -41,7 +41,7 @@ export default {
 
                     return Response.json(
                         {
-                            error: "The AI MeASURe-ment failed."
+                             error: `OpenAI error: ${JSON.stringify(data)}`
                         },
                         { status: 500 }
                     );
