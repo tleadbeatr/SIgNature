@@ -2,7 +2,7 @@ export default {
     async fetch(request, env) {
         const url = new URL(request.url);
 
-        // The SIgNature analysis endpoint
+        // SIgNature analysis endpoint
         if (url.pathname === "/analyse" && request.method === "POST") {
             try {
                 const body = await request.json();
@@ -15,17 +15,48 @@ export default {
                     );
                 }
 
+                const prompt =
+                    `Here is my SIgNature: ${signature}\n\n` +
+                    `What do you think?`;
+
+                const response = await fetch(
+                    "https://api.openai.com/v1/responses",
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Authorization": `Bearer ${env.OPENAI_API_KEY}`
+                        },
+                        body: JSON.stringify({
+                            model: "gpt-5.6-luna",
+                            input: prompt
+                        })
+                    }
+                );
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    console.error("OpenAI error:", data);
+
+                    return Response.json(
+                        {
+                            error: "The AI MeASURe-ment failed."
+                        },
+                        { status: 500 }
+                    );
+                }
+
                 return Response.json({
-                    result:
-                        `Your SIgNature is ${signature}.\n\n` +
-                        `The MeASURe-ment has been received. ` +
-                        `The AI interpretation will appear here shortly.`
+                    result: data.output_text
                 });
 
             } catch (error) {
+                console.error("Worker error:", error);
+
                 return Response.json(
-                    { error: "Invalid request." },
-                    { status: 400 }
+                    { error: "Something went wrong." },
+                    { status: 500 }
                 );
             }
         }
@@ -34,4 +65,3 @@ export default {
         return env.ASSETS.fetch(request);
     }
 };
-
