@@ -30,7 +30,7 @@ export default {
                             "Authorization": `Bearer ${env.GEMINI_API_KEY}`
                         },
                         body: JSON.stringify({
-                            model: "gemini-2.5-flash-lite",
+                            model: "gemini-3.5-flash-lite",
                             messages: [
                                 {
                                     role: "user",
