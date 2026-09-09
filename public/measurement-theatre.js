@@ -970,26 +970,6 @@ function runMeasurementTheatre(options = {}) {
  * expose the public API explicitly.
  */
 window.runMeasurementTheatre = runMeasurementTheatre;
-```
 
-### A couple of deliberate choices here
-
-**1. The AI request and theatre are independent.**
-
-The eventual `index.html` will do approximately:
-
-```javascript
-const theatre = runMeasurementTheatre({
-    signature,
-    element: result
-});
-
-const response = await fetch("/analyse", ...);
-
-theatre.complete();
-
-await theatre.promise;
-
-// Now display data.result
 
 
