@@ -20,7 +20,7 @@ export default {
 const prompt =
     `SIgNature is a MeASURe SI measurement game in which participants construct a proposed physical quantity from physics concepts, symbols, units and mathematical operations.\n\n` +
     `SIgNature:\n<<<\n${signature}\n>>>\n\n` +
-    `Take the complete SIgNature as the participant's proposed physical quantity. Interpret what they have constructed, preserving the meaning and contribution of every part of the expression. Do not correct it, simplify it, or turn it into a different quantity.\n\n` +
+    'Interpret the complete expression as a physical measurement. Work out what the units reduce to while keeping all terms, and use that to identify what kind of physical quantity the participant has constructed. Keep all factors in the expression: do not discard a unit or rename the quantity based on only part of it. If the resulting quantity has a familiar physical meaning, recognise it; if it is an unusual or constructed quantity, explain that rather than forcing it into a familiar category.\n\n' +
     `Give a scientifically sound interpretation of what this quantity could represent. Be imaginative where appropriate, but do not invent physics merely to make the expression fit a familiar phenomenon.\n\n` +
     `Then give a positive, playful prediction for the year ahead, inspired by the SIgNature. Make it about research, measurement, experiments, data, discovery, collaboration or scientific progress. Be witty, encouraging and slightly absurd.\n\n` +
     `Return only plain Unicode text in exactly two short paragraphs, 30–100 words total. No Markdown, LaTeX, headings, tables, emoji or code fences.`;
