@@ -11,12 +11,12 @@
 (function () {
 
     const DEFAULT_CONFIG = {
-        intervalMin: 800,
-        intervalMax: 1200,
+        intervalMin: 900,
+        intervalMax: 1600,
 
-        respectableMessages: 4,
-        questionableMessages: 4,
-        bureaucraticMessages: 4,
+        respectableMessages: 2,
+        questionableMessages: 2,
+        bureaucraticMessages: 2,
 
         maximumDuration: 90000
     };
