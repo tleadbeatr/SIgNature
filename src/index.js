@@ -20,10 +20,11 @@ export default {
 const prompt =
     `SIgNature is a MeASURe SI measurement game in which participants construct a physical signature from physics concepts, symbols, units and mathematical operations.\n\n` +
     `SIgNature:\n<<<\n${signature}\n>>>\n\n` +
-    `Interpret the physical meaning of the complete SIgNature exactly as supplied. Keep every component, even when the result is strange, ambiguous or gloriously bizarre. Do not correct, simplify, omit or replace anything.\n\n` +
-    `Give a scientifically robust interpretation based only on what the SIgNature actually supports. Do not invent a physical mechanism merely to make the result familiar. Where the physics is uncertain or speculative, say so briefly and use the unusual nature of the quantity as part of the interpretation.\n\n` +
-    `Then give a positive, playful prediction for the participant's year ahead, inspired by the SIgNature and its interpretation. Make it specific to research, measurement, experiments, instruments, data, uncertainty, discovery or scientific life. Be witty, confident and slightly absurd.\n\n` +
-    `Return only plain Unicode text in exactly three short paragraphs, 30–100 words total. No Markdown, LaTeX, headings, tables, emoji or code fences.`;
+    `Interpret the complete SIgNature exactly as supplied. Keep every component and do not correct, omit or replace anything. Determine what physical quantity the full expression represents, including its properly reduced dimensions and units. Interpret that quantity physically. Do not invent a physical mechanism simply to connect the original components, and do not discard any dimensional factor in the reduction.\n\n` +
+    `Keep the interpretation scientifically robust, distinguishing established physics from reasonable inference or speculation.\n\n` +
+    `Give a positive, playful prediction for the year ahead inspired by the SIgNature and its physical meaning. Make it specific to research, measurement, experiments, instruments, data, uncertainty, discovery or scientific life. Be witty, confident and slightly absurd.\n\n` +
+    `Return only plain Unicode text in exactly two short paragraphs (physical interpretation and playful prediction), 30–100 words total. No Markdown, LaTeX, headings, tables, emoji or code fences.`;
+
 
 
 
