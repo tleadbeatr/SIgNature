@@ -8,6 +8,7 @@ export default {
             try {
                 const body = await request.json();
                 const signature = body.signature?.trim();
+                console.log("SIGNATURE RAW:", JSON.stringify(signature));
 
                 if (!signature) {
                     return Response.json(
@@ -25,7 +26,8 @@ const prompt =
     `Give a positive, playful prediction for the participant's year in research, measurement, experiments, data, discovery, collaboration or scientific progress for their year ahead inspired by their SIgNature. Be witty, encouraging and slightly absurd.\n\n` +
     `Return exactly two short paragraphs, 30–100 words total. Plain Unicode text only. No headings, Markdown, LaTeX, emoji or code fences.`;
 
-
+console.log("PROMPT:", JSON.stringify(prompt));
+console.log("PROMPT LENGTH:", prompt.length);
 
 
 
@@ -38,6 +40,8 @@ const prompt =
                             "Content-Type": "application/json",
                             "Authorization": `Bearer ${env.GEMINI_API_KEY}`
                         },
+
+                        
                         body: JSON.stringify({
                             model: "gemini-3.5-flash-lite",
                             messages: [
@@ -47,6 +51,9 @@ const prompt =
                                 }
                             ]
                         })
+
+                            console.log("GEMINI PAYLOAD:", JSON.stringify(payload, null, 2));
+                            body: JSON.stringify(payload)
                     }
                 );
 
