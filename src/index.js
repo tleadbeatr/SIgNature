@@ -22,9 +22,9 @@ export default {
                 const prompt =
                     `SIgNature is a playful unit and dimensional analysis game. ` +
                     `A participant has constructed the following expression as their SIgNature:\n\n` +
-                    `<<<\n${signature}\n>>>\n\n` +
+                    `\n${signature}\n\n` +
                     `Treat the SIgNature as exact and immutable. Explain what physical quantity the exact SIgNature represents. ` +
-                    `You may reduce the units by dimensional analysis.\n\n` +
+                    `Do not assume that a unit is dimensionless or cancels unless the algebra explicitly shows that it does.\n\n` +
                     `Give a positive, playful prediction for the participant's year in research, measurement, experiments, ` +
                     `data, discovery, collaboration or scientific progress for their year ahead inspired by their SIgNature. ` +
                     `Be witty, encouraging and slightly absurd.\n\n` +
