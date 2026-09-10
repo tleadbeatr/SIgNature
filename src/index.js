@@ -19,25 +19,19 @@ export default {
                 }
 
                 // The AI prompt
+const prompt =
+    `SIgNature is a units and dimensional analysis game. ` +
+    `A participant has constructed the following expression:\n` +
+    `\n${signature}\n\n` +
+    `Determine the dimensions of the complete expression by explicit dimensional analysis. ` +
+    `Preserve every dimension that does not algebraically cancel. ` +
+    `Interpret the resulting physical quantity as given from the dimensions (even if they are atrange) ` +
+    `Give a positive, playful prediction for the participant's year in research, measurement, experiments, ` +
+    `data, discovery, collaboration or scientific progress for their year ahead inspired by their expression. ` +
+    `Be witty, encouraging and slightly absurd.\n\n` +
+    `Return exactly two short paragraphs, 30–100 words total. Plain Unicode text only. ` +
+    `No headings, Markdown, LaTeX, emoji or code fences.`;
 
-                const prompt =
-    `What are the SI dimensions of the following expression?\n\n` +
-    `Kelvin Ohm per Henry\n\n` +
-    `Give the answer in SI base dimensions and show the algebra.`;
-
-                /*
-                const prompt =
-                    `SIgNature is a playful unit and dimensional analysis game. ` +
-                    `A participant has constructed the following expression as their SIgNature:\n\n` +
-                    `\n${signature}\n\n` +
-                    `Treat the SIgNature as exact and immutable. Explain what physical quantity the exact SIgNature represents. ` +
-                    `Do not assume that a unit is dimensionless or cancels unless the algebra explicitly shows that it does.\n\n` +
-                    `Give a positive, playful prediction for the participant's year in research, measurement, experiments, ` +
-                    `data, discovery, collaboration or scientific progress for their year ahead inspired by their SIgNature. ` +
-                    `Be witty, encouraging and slightly absurd.\n\n` +
-                    `Return exactly two short paragraphs, 30–100 words total. Plain Unicode text only. ` +
-                    `No headings, Markdown, LaTeX, emoji or code fences.`;
-*/
                 console.log("PROMPT:", JSON.stringify(prompt));
                 console.log("PROMPT LENGTH:", prompt.length);
 
