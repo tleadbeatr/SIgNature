@@ -101,7 +101,8 @@
         const form = document.getElementById("signature-form");
         const signatureInput = document.getElementById("signature");
         const result = document.getElementById("result");
-
+        const button = form.querySelector("button");
+        
         form.addEventListener("submit", async (event) => {
             event.preventDefault();
 
@@ -111,6 +112,9 @@
                 return;
             }
 
+            // disable button while theatre runs
+            button.disabled = true;
+            
                 // Clear any previous result
             result.textContent = "";
             result.classList.remove("hidden");
@@ -164,6 +168,8 @@
                 await theatre.promise;
                 result.textContent += "\n\nThe MeASURe-ment failed.\n\n" + error.message;
             }
+
+            button.disabled = false;
         });
     </script>
 
