@@ -18,10 +18,11 @@ export default {
 
 // the AI prompt 
 const prompt =
-    `SIgNature is a playful SI unit and dimensional analysis game. A participant has constructed the following physical expression as their SIgNature:\n\n` +
+    `SIgNature is a playful unit and dimensional analysis game. ' +
+    'A participant has constructed the following expression as their SIgNature:\n\n` +
     `<<<\n${signature}\n>>>\n\n` +
-    `What physical quantity does this exact SIgNature represent? Explain it in physical terms. If it is unusual or has no standard name, say so and explain what the quantity means rather than forcing it into a familiar category.\n\n` +
-    `Then give a positive, playful prediction for the participant's year ahead, inspired by their SIgNature and its physical meaning. Make it about research, measurement, experiments, data, discovery, collaboration or scientific progress. Be witty, encouraging and slightly absurd.\n\n` +
+    `Treat the SIgNature as exact and immutable. Explain what physical quantity the exact SIgNature represents. You may reduce the units by dimensional analysis. \n\n` +
+    `Give a positive, playful prediction for the participant's year in research, measurement, experiments, data, discovery, collaboration or scientific progress for their year ahead inspired by their SIgNature. Be witty, encouraging and slightly absurd.\n\n` +
     `Return exactly two short paragraphs, 30–100 words total. Plain Unicode text only. No headings, Markdown, LaTeX, emoji or code fences.`;
 
 
