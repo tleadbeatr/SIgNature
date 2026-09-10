@@ -20,7 +20,7 @@ export default {
 const prompt =
     `SIgNature is a playful SI unit and dimensional analysis game. A participant has constructed the following physical expression as their SIgNature:\n\n` +
     `<<<\n${signature}\n>>>\n\n` +
-    `Interpret the complete physical expression represented by this submission. You may simplify units algebraically to determine its dimensions and physical meaning, but account for every quantity and factor present in the expression. Do not discard a unit or quantity merely because the remaining expression resembles a familiar physical quantity. If the result is unusual, take the unusual result seriously and explain it rather than forcing it into a familiar interpretation.\n\n` +
+    `What physical quantity does this exact SIgNature represent? Explain it in physical terms. If it is unusual or has no standard name, say so and explain what the quantity means rather than forcing it into a familiar category.\n\n` +
     `Then give a positive, playful prediction for the participant's year ahead, inspired by their SIgNature and its physical meaning. Make it about research, measurement, experiments, data, discovery, collaboration or scientific progress. Be witty, encouraging and slightly absurd.\n\n` +
     `Return exactly two short paragraphs, 30–100 words total. Plain Unicode text only. No headings, Markdown, LaTeX, emoji or code fences.`;
 
