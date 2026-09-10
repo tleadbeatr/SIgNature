@@ -10,4 +10,10 @@
     "directory": "public",
     "binding": "ASSETS"
   }
+  "analytics_engine_datasets": [
+    {
+      "binding": "SIGNATURE_LOG",
+      "dataset": "signature_submissions"
+    }
+  ]
 }
