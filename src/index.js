@@ -18,6 +18,12 @@ export default {
                     );
                 }
 
+                env.SIGNATURE_LOG.writeDataPoint({
+                    blobs: [signature],
+                    doubles: [1],
+                    indexes: ["submission"]
+                });
+
                 // The AI prompt
 const prompt =
     `SIgNature is a units and dimensional analysis game. ` +
