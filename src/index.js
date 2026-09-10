@@ -20,9 +20,9 @@ export default {
 const prompt =
     `SIgNature is a MeASURe SI measurement game in which participants construct a physical signature from physics concepts, symbols, units and mathematical operations.\n\n` +
     `SIgNature:\n<<<\n${signature}\n>>>\n\n` +
-    `Interpret the complete SIgNature exactly as supplied. Keep every component and do not correct, omit or replace anything. Determine the physical quantity represented by the full expression, using dimensional analysis where useful while preserving the complete dimensional result: never replace it with a familiar quantity that has only some of the same dimensions. Interpret what that complete quantity could physically mean.\n\n` +
-    `Keep the interpretation scientifically robust, distinguishing established physics from reasonable inference or speculation.\n\n` +
-    `Give a positive, playful prediction for the year ahead inspired by the SIgNature and its physical meaning. Make it specific to research, measurement, experiments, instruments, data, uncertainty, discovery or scientific life. Be witty, confident and slightly absurd.\n\n` +
+    `Interpret the complete SIgNature exactly as supplied. Keep every component, including components that make the result strange or bizarre. Components may only disappear through valid algebraic cancellation; never drop a factor simply because the remaining expression resembles a familiar physical quantity. Only assign a familiar physical name when the complete result genuinely has the required dimensions and meaning.\n\n` +
+    `Give a scientifically robust physical interpretation. Distinguish established physics from reasonable inference and speculation.\n\n` +
+    `Then give a positive, playful prediction for the year ahead inspired by the SIgNature and its physical meaning. Make it specific to research, measurement, experiments, instruments, data, uncertainty, discovery or scientific life. Be witty, confident and slightly absurd.\n\n` +
     `Return only plain Unicode text in exactly two short paragraphs (physical interpretation and playful prediction), 30–100 words total. No Markdown, LaTeX, headings, tables, emoji or code fences.`;
 
 
