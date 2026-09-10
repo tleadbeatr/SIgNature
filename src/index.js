@@ -79,6 +79,9 @@ export default {
                 }
 
                 return Response.json({
+                    signature: signature,
+                    prompt: prompt,
+                    payload: payload,
                     result:
                         data.choices?.[0]?.message?.content ||
                         "Gemini returned no text."
