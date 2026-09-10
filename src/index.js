@@ -25,7 +25,8 @@ const prompt =
     `\n${signature}\n\n` +
     `Determine the dimensions of the complete expression by explicit dimensional analysis. ` +
     `Preserve every dimension that does not algebraically cancel. ` +
-    `Interpret the resulting physical quantity as given from the dimensions (even if they are strange) ` +
+    'First calculate the SI base dimensions of every quantity separately. Then perform the multiplication and division algebra explicitly. Check the resulting exponents before interpreting the expression.' +
+    `Interpret the resulting physical quantity consistently with those dimensions. Do not claim a more specific physical meaning than the dimensions justify. ` +
     `Give a positive, playful prediction for the participant's year in research, measurement, experiments, ` +
     `data, discovery, collaboration or scientific progress for their year ahead inspired by their expression. ` +
     `Be witty, encouraging and slightly absurd.\n\n` +
