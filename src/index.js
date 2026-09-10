@@ -18,11 +18,13 @@ export default {
 
 // the AI prompt 
 const prompt =
-    `SIgNature is a MeASURe SI measurement game in which participants construct a physical signature from physics concepts, symbols, units and mathematical operations.\n\n` +
+    `SIgNature is a MeASURe SI measurement game in which participants construct a proposed physical quantity from physics concepts, symbols, units and mathematical operations.\n\n` +
     `SIgNature:\n<<<\n${signature}\n>>>\n\n` +
-    `Interpret the complete SIgNature exactly as supplied. Keep every component. Use valid physics and dimensional analysis to determine what quantity the complete expression represents; do not drop, replace or ignore any component simply because a more familiar quantity can be recognised within it. Explain the physical meaning of the resulting quantity without inventing a physical mechanism that is not supported by the expression.\n\n` +
-    `Then give a positive, playful prediction for the year ahead based on that physical meaning. The prediction should concern successful research, measurements, experiments, data, discoveries, collaborations or scientific progress. Be witty and slightly absurd, but make the outcome encouraging rather than catastrophic.\n\n` +
+    `Take the complete SIgNature as the participant's proposed physical quantity. Interpret what they have constructed, preserving the meaning and contribution of every part of the expression. Do not correct it, simplify it, or turn it into a different quantity.\n\n` +
+    `Give a scientifically sound interpretation of what this quantity could represent. Be imaginative where appropriate, but do not invent physics merely to make the expression fit a familiar phenomenon.\n\n` +
+    `Then give a positive, playful prediction for the year ahead, inspired by the SIgNature. Make it about research, measurement, experiments, data, discovery, collaboration or scientific progress. Be witty, encouraging and slightly absurd.\n\n` +
     `Return only plain Unicode text in exactly two short paragraphs, 30–100 words total. No Markdown, LaTeX, headings, tables, emoji or code fences.`;
+
 
 
 
