@@ -18,12 +18,13 @@ export default {
 
 // the AI prompt 
 const prompt =
-    `SIgNature is a MeASURe SI measurement game in which participants construct a proposed physical signature from physics concepts, symbols, units and mathematical operations.\n\n` +
+    `SIgNature is a MeASURe SI measurement game in which participants construct a physical signature from physics concepts, symbols, units and mathematical operations.\n\n` +
     `SIgNature:\n<<<\n${signature}\n>>>\n\n` +
-    `Interpret the physical meaning of the full SIgNature exactly as supplied. Do not correct, simplify, replace, omit or reinterpret any component, even if the result is bizarre, ambiguous or physically unusual. Take the complete expression seriously and find the most interesting scientifically defensible interpretation of it.\n\n` +
-    `The interpretation should be scientifically robust: distinguish established physics from reasonable inference and playful speculation, without allowing the science to become nonsense.\n\n` +
-    `Then give a positive, playful MeASURe prediction for the year ahead, inspired by the physics or peculiarities of the SIgNature. Make it specific to research, measurement, experiments, instruments, data, uncertainty, discovery or scientific life, rather than a generic horoscope. Be witty, confident and slightly absurd.\n\n` +
-    `Return only plain Unicode text in exactly three short paragraphs, 30–100 words total. Do not use Markdown, LaTeX, headings, tables, emoji or code fences.`;
+    `Interpret the physical meaning of the complete SIgNature exactly as supplied. Keep every component, even when the result is strange, ambiguous or gloriously bizarre. Do not correct, simplify, omit or replace anything.\n\n` +
+    `Give a scientifically robust interpretation based only on what the SIgNature actually supports. Do not invent a physical mechanism merely to make the result familiar. Where the physics is uncertain or speculative, say so briefly and use the unusual nature of the quantity as part of the interpretation.\n\n` +
+    `Then give a positive, playful prediction for the participant's year ahead, inspired by the SIgNature and its interpretation. Make it specific to research, measurement, experiments, instruments, data, uncertainty, discovery or scientific life. Be witty, confident and slightly absurd.\n\n` +
+    `Return only plain Unicode text in exactly three short paragraphs, 30–100 words total. No Markdown, LaTeX, headings, tables, emoji or code fences.`;
+
 
 
                 const response = await fetch(
