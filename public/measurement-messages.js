@@ -42,7 +42,17 @@ window.MEASUREMENT_THEATRE = {
         "Checking SI coherence.",
         "Evaluating derived quantities.",
         "Checking for systematic bias.",
-        "Estimating confidence in measurement."
+        "Estimating confidence in measurement.",
+        "Measuring the same quantity independently.",
+        "Using a known transition frequency to establish a timebase.",
+        "Measuring mass by balancing against a calibrated reference.",
+        "Determining temperature from a known calibration curve.",
+        "Using coincidence timing to distinguish random background.",
+        "Correcting for detector acceptance.",
+        "Inferring unknowns from overdetermined observables.",
+        "Calibrating first, measuring second, reporting uncertainty throughout.",
+        "Using dimensional analysis before trusting the numerical answer."
+    
         // ... more respectable messages ...
     ],
 
@@ -56,7 +66,7 @@ window.MEASUREMENT_THEATRE = {
         "Normalising the normalisation.",
         "Propagating propagated uncertainties.",
         "Checking the uncertainty of the uncertainty.",
-       "Resolving unit ambiguity.",
+        "Resolving unit ambiguity.",
         "Resolving ambiguity in the resolution.",
         "Performing second-order dimensional analysis.",
         "Performing additional dimensional analysis.",
@@ -72,12 +82,22 @@ window.MEASUREMENT_THEATRE = {
         "Repeating reproducibility assessment.",
         "Comparing independently derived reference quantities.",
         "Comparing the comparison with the reference.",
-        "Performing an independent independent check.",
+        "Performing an independent independence check.",
         "Checking for hidden units.",
         "Searching for unreported prefixes.",
         "Evaluating possible dimensional aliases.",
         "Checking whether the SI is still coherent.",
-        "Reviewing the interpretation of the interpretation."
+        "Reviewing the interpretation of the interpretation.",
+        "Dividing signal by background until the answer looks interesting.",
+        "Measuring temperature using the enthusiasm of the apparatus.",
+        "Self-calibrating by use of averaging", 
+        "Counting undefined quantities",
+        "Correcting detection effects by detection.",
+        "Measuring uncertainty by repetition.",
+        "Appealing to the inverse square law.",
+        "Inferring absolute measurement from cancelled ratios.",
+        "Dividing out everything inconvenient and retaining the physics."
+    
         // ... more questionable messages ...
     ],
 
@@ -113,10 +133,7 @@ window.MEASUREMENT_THEATRE = {
         "Establishing which reference standard is most referenced.",
         "Checking whether the reference standard references itself.",
         "Performing administrative dimensional analysis.",
-        "Completing form MS-17B.",
         "Checking whether form MS-17B requires form MS-17C.",
-        "Form MS-17C required.",
-        "Completing form MS-17C.",
         "Checking whether form MS-17C requires approval.",
         "Approval required.",
         "Requesting approval.",
@@ -128,7 +145,22 @@ window.MEASUREMENT_THEATRE = {
         "Committee has requested more measurements.",
         "Committee has requested fewer uncertainties.",
         "Committee has requested a clearer uncertainty budget.",
-        "Uncertainty budget remains unconvinced."
+        "Uncertainty budget remains unconvinced.",
+        "Traceability shall be maintained by ensuring that all measurements remain traceable.",
+        "The measured value shall be considered valid unless demonstrated otherwise.",
+        "Uncertainty shall be assessed in accordance with the applicable uncertainty assessment procedure.",
+        "Calibration establishes agreement not correctness.",
+        "Where repeatability is demonstrated, reproducibility shall be considered reproducibly demonstrated.",
+        "Nonconforming measurements may be retained for historical purposes.",
+        "Documenting all deviations, including deviations from the requirement to document deviations.",
+        "The standard shall remain provisional until such time as its provisional status is reviewed.",
+        "Measurement personnel shall demonstrate competence in the measurement of competence.",
+        "Where no uncertainty is available, the uncertainty shall be regarded as requiring further assessment.",
+        "No claim of traceability shall be inferred from participation, proximity, affiliation or possession of this measurement.",
+        "Calibration certificates may be pinned to the fridge.",
+        "Failure to repeat shall constitute reproducible information.",
+        "Governance decisions shall remain provisional until governance decisions are decided."
+    
         // ... more bureaucratic messages ...
     ],
 
@@ -265,7 +297,25 @@ window.MEASUREMENT_THEATRE = {
         "Checking again.",
         "Science remains plausible.",
         "Probably.",
-        "Continuing."
+        "Continuing.",
+        "Replacing the uncertainty budget with dimensional analysis.",
+        "Constructing a primary standard from seven constants.",
+        "Performing a measurement whose uncertainty is exactly zero because the defining constants are exact.",
+        "Demonstrating traceability by citing this document as the primary source of physical reality.",
+        "Traceability may be established; its existence does not imply utility.", 
+        "Traceability shall not be inferred from proximity, affiliation or possession of this document.", 
+        "No claim of traceability shall be inferred from participation. ",
+        "Participation may or may not include participants.",
+        "Numerical values shall not be reported to a resolution unsupported by the measurement.", 
+        "Exceptions may be made for tables with an odd, or even, number of legs.",
+        "No base dimensions were omitted or harmed in the production of this document. ",
+        "Additional base dimensions are not currently available.",
+        "Standard points with error bars suitable for publication are available.", 
+        "Smaller error bars are available at increased cost. ",
+        "Ball-park values without uncertainty should not be used. ",
+        "Calibration establishes agreement; not correctness. ",
+        "Repeatability and reproducibility shall be assessed under repeatedly reproducible conditions. ",
+        "Failure to repeat shall constitute reproducible information."
 
         // ... the large deranged library ...
     ],
@@ -274,9 +324,8 @@ window.MEASUREMENT_THEATRE = {
     closing: [
 
         "Measurement analysed.",
-        "Results may have relevance.",
-        "Metrological significance cannot be excluded.",
-        "Interpretation follows."
+        "Results may or may not have relevance.",
+        "Metrological significance cannot be excluded."
     ],
 
 
