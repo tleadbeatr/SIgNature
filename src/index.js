@@ -26,7 +26,6 @@ const prompt =
     `Determine the dimensions of the complete expression by explicit dimensional analysis. ` +
     `Preserve every dimension that does not algebraically cancel. ` +
     'First calculate the SI base dimensions of every quantity separately. Then perform the multiplication and division algebra explicitly. Check the resulting exponents before interpreting the expression.' +
-    'Show the dimensional algebra explicitly and use that algebra as the authoritative result. Check the final dimensions against the algebra before interpreting them.' +
     `Interpret the resulting physical quantity consistently with those dimensions. Do not claim a more specific physical meaning than the dimensions justify. ` +
     `Give a positive, playful prediction for the participant's year in research, measurement, experiments, ` +
     `data, discovery, collaboration or scientific progress for their year ahead inspired by their expression. ` +
