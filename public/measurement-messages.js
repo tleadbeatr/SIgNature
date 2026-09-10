@@ -28,7 +28,7 @@ window.MEASUREMENT_THEATRE = {
         "Applying calibration coefficients.",
         "Checking significant figures.",
         "Assessing measurement resolution.",
-        "Establishing traceability."
+        "Establishing traceability.",
         "Comparing against reference standards.",
         "Consulting primary standards.",
         "Consulting secondary standards.",
@@ -55,7 +55,7 @@ window.MEASUREMENT_THEATRE = {
         "Measuring the measurement.",
         "Normalising the normalisation.",
         "Propagating propagated uncertainties.",
-        "Checking the uncertainty of the uncertainty."
+        "Checking the uncertainty of the uncertainty.",
        "Resolving unit ambiguity.",
         "Resolving ambiguity in the resolution.",
         "Performing second-order dimensional analysis.",
@@ -94,8 +94,8 @@ window.MEASUREMENT_THEATRE = {
         "Escalating to senior metrological review.",
         "Consulting a more senior metrologist.",
         "Requesting a second opinion from the first opinion.",
-        "Initiating inter-laboratory comparison."
-"Initiating inter-laboratory comparison of the comparison.",
+        "Initiating inter-laboratory comparison.",
+        "Initiating inter-laboratory comparison of the comparison.",
         "Checking accreditation status.",
         "Checking the accreditation of the accreditation.",
         "Assessing compliance with applicable standards.",
